@@ -1,0 +1,18 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/vars.scss";
+
+.btn {
+  height: 5vh;
+  padding: 2%;
+  background: $categoryButton;
+  color: $darkPurple;
+  @extend %flex-row-align-center;
+  flex-wrap: nowrap;
+  font-size: 200%;
+  border-radius: 5px;
+  margin-top: 3%;
+  &:hover {
+    cursor: pointer;
+    background: $lightPurpleColor;
+  }
+}

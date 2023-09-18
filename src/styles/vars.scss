@@ -1,0 +1,34 @@
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+%flex-column-align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+%flex-column-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%flex-row-align-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+

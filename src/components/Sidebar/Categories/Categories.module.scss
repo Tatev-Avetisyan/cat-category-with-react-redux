@@ -1,0 +1,17 @@
+@import "../../../styles/colors.module.scss";
+@import"../../../styles/vars.scss";
+
+.wrapper {
+  width: 100%;
+  @extend %flex-column-align-center;
+  &_title {
+    color: rgb(228, 210, 228);
+    font-size: 3rem;
+    margin: 5rem 0 7rem 0;
+  }
+  .categoryBtn {
+    width: 90%;
+    height: 7vh;
+    font-size: 250%;
+  }
+}

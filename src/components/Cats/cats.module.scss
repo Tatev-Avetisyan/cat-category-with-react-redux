@@ -1,0 +1,22 @@
+@import "../../styles/vars.scss";
+
+.catItemWrapper {
+  width: 70%;
+  min-height: 60vh;
+  @extend %flex-column-align-center;
+  .innerWrapper {
+    width: 100%;
+    @extend %flex-row-align-center;
+    flex-wrap: wrap;
+  }
+  .catItem {
+    width: 100px;
+    height: 100px;
+    margin: 1%;
+  }
+  .btn {
+    @extend %flex-row-align-center;
+    width: 100%;
+    margin-top: 15%;
+  }
+}

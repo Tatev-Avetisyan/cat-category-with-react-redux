@@ -1,0 +1,1 @@
+export {default as useWindowResponsive} from "./useWindowResponsive"

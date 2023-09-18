@@ -1,0 +1,34 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/vars.scss";
+
+.wrapper {
+  width: 60%;
+  min-height: 100vh;
+  @extend %flex-column-align-center;
+  align-items: center;
+  .innerWrapper {
+    width: 100%;
+    @extend %flex-row-align-center;
+    flex-wrap: wrap;
+    .categoryWrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 3%;
+      margin: 0 0 10% 0;
+      & h2 {
+        font-size: 50px;
+        margin-left: 25%;
+        margin-right: 25%;
+      }
+      .category {
+        width: 16rem;
+      }
+    }
+  }
+  .title {
+    font-size: 6rem;
+    color: $darkPurple;
+    margin-bottom: 5%;
+  }
+}

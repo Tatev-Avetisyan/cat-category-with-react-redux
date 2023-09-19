@@ -13,7 +13,7 @@ export const getCats = createAsyncThunk<any, FetchCatsType>(
           category_ids: categoryId ? categoryId : null,
         },
       });
-      return data;
+      return { data, categoryId };
     } catch (error: any) {
       rejectWithValue(error.response.data);
     }

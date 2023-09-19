@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../types";
-import { CatInitialStateType } from "./type";
+import { ICatsWithCategory } from "./type";
 import { getCats } from "./CatsThunk";
 
-const initialState: CatInitialStateType = {
-  data: [],
+const initialState: ICatsWithCategory = {
+  data: null,
   isLoading: false,
   isError: null,
 };
@@ -20,7 +20,20 @@ const catsSlice = createSlice({
     builder.addCase(getCats.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.isError = null;
-      state.data = payload;
+
+      if (state.data?.[payload.categoryId]) {
+        state.data = {
+          ...state.data,
+          ...{
+            [payload.categoryId]: [
+              ...state.data?.[payload.categoryId],
+              ...payload.data,
+            ],
+          },
+        };
+      } else {
+        state.data = { ...state.data, [payload.categoryId]: payload.data };
+      }
     });
     builder.addCase(getCats.rejected, (state, { payload }) => {
       state.isError = payload as null;

@@ -23,13 +23,17 @@ const Cats: FC<I_CatsProps> = ({ page, categoryId, setPage }) => {
   return (
     <div className={styles.catItemWrapper}>
       <div className={styles.innerWrapper}>
-        {cats
-          ? cats?.map((cat) => (
-              <div key={cat.id} className={styles.catItem}>
-                <img className={styles.catItem} src={cat.url} alt="cat" />
-              </div>
-            ))
-          : null}
+        {cats ? (
+          cats?.[categoryId]?.map((cat) => (
+            <div key={cat.id} className={styles.catItem}>
+              <img className={styles.catItem} src={cat.url} alt="cat" />
+            </div>
+          ))
+        ) : (
+          <div>
+            <p>No cats found for this category.</p>
+          </div>
+        )}
       </div>
       <div className={styles.btn}>
         <Button onClick={loadMorePage} content="Load More Cats" />

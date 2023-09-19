@@ -1,19 +1,21 @@
-export interface CatsType {
+import { categories } from "..";
+
+export interface I_CatsType {
   id: number;
   url: string;
+  width: number;
+  height: number;
 }
 export interface RequestType {
   isLoading: boolean;
   isError: any;
 }
+export type T_CatsState = {
+  [categoryId: number]: I_CatsType[];
+};
 
-export interface CatInitialStateType extends RequestType {
-  data: CatsType[] | null;
-  page?: number;
-}
-
-export interface ICatsWithCategory {
-  id: CatInitialStateType;
+export interface ICatsWithCategory extends RequestType {
+  data: T_CatsState | null;
 }
 
 export interface FetchCatsType {
